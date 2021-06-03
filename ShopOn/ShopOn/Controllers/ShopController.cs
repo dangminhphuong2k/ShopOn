@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ShopOn.Models.BUS;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,13 +12,15 @@ namespace ShopOn.Controllers
         // GET: Shop
         public ActionResult Index()
         {
-            return View();
+            var db = ShopOnlineBUS.DanhSach();
+            return View(db);
         }
 
         // GET: Shop/Details/5
-        public ActionResult Details(int id)
+        public ActionResult Details(String id)
         {
-            return View();
+            var db = ShopOnlineBUS.ChiTiet(id);
+            return View(db);
         }
 
         // GET: Shop/Create
