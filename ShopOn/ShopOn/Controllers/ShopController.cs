@@ -1,4 +1,5 @@
-﻿using ShopOn.Models.BUS;
+﻿using PagedList;
+using ShopOn.Models.BUS;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,9 +11,9 @@ namespace ShopOn.Controllers
     public class ShopController : Controller
     {
         // GET: Shop
-        public ActionResult Index()
+        public ActionResult Index(int page = 1, int pagesize = 7)
         {
-            var db = ShopOnlineBUS.DanhSach();
+            var db = ShopOnlineBUS.DanhSach().ToPagedList(page, pagesize);
             return View(db);
         }
 

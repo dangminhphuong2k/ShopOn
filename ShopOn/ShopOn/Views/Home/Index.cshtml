@@ -14,7 +14,7 @@
                         IPhone <span class="primary"> 12 <strong>Pro Max</strong></span>
                     </h2>
                     <h4 class="caption subtitle">128GB-256GB</h4>
-                    <a class="caption button-radius" href="@Url.Action("Shop")"><span class="icon"></span>Xem ngay</a>
+                    <a class="caption button-radius" href="@Url.Action("Index", "Shop")"><span class="icon"></span>Xem ngay</a>
                 </div>
             </li>
             <li>
@@ -211,69 +211,8 @@
     <div class="zigzag-bottom"></div>
     <div class="container">
         <div class="row">
-            <div class="col-md-4">
-                <div class="single-product-widget">
-                    <h2 class="product-wid-title">Bán chạy</h2>
-                    <a href="@Url.Action("Shop")" class="wid-view-more">Xem ngay</a>
-                    <div class="single-wid-product">
-                        <a href="@Url.Action("Shop")"><img src="~/Asset/img/1.png" alt="" class="product-thumb"></a>
-                        <h2><a href="">IPhone 12 Pro Max 256GB</a></h2>
-                        <div class="product-wid-rating">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
-                        <div class="product-wid-price">
-                            <ins>32.990.000 VNĐ</ins> <del>35.990.000 VNĐ</del>
-                        </div>
-                    </div>
-                    <div class="single-wid-product">
-                        <a href=""><img src="~/Asset/img/8.png" alt="" class="product-thumb"></a>
-                        <h2><a href="">Oppo Find X3 Pro 5G</a></h2>
-                        <div class="product-wid-rating">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
-                        <div class="product-wid-price">
-                            <ins>26.990.000 VNĐ</ins> <del>28.990.000 VNĐ</del>
-                        </div>
-                    </div>
-                    <div class="single-wid-product">
-                        <a href=""><img src="~/Asset/img/11.png" alt="" class="product-thumb"></a>
-                        <h2><a href="">Xiaomi Mi 11 5G</a></h2>
-                        <div class="product-wid-rating">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
-                        <div class="product-wid-price">
-                            <ins>20.990.000 VNĐ</ins> <del>22.990.000 VNĐ</del>
-                        </div>
-                    </div>
-                    <div class="single-wid-product">
-                        <a href=""><img src="~/Asset/img/6.png" alt="" class="product-thumb"></a>
-                        <h2><a href="">Samsung Galaxy Z Fold2 5G</a></h2>
-                        <div class="product-wid-rating">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
-                        <div class="product-wid-price">
-                            <ins>50.000.000 VNĐ</ins> <del>52.000.000 VNĐ</del>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
+           @Html.Partial("_Top4New",ShopOn.Models.BUS.ShopOnlineBUS.Top4New())
+            @*<div class="col-md-4">
                 <div class="single-product-widget">
                     <h2 class="product-wid-title">Lượt xem nhiều</h2>
                     <a href="#" class="wid-view-more">Xem ngay</a>
@@ -320,55 +259,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-4">
-                <div class="single-product-widget">
-                    <h2 class="product-wid-title">Mới về</h2>
-                    <a href="#" class="wid-view-more">Xem ngay</a>
-                    <div class="single-wid-product">
-                        <a href="single-product.html"><img src="~/Asset/img/product-thumb-3.jpg" alt="" class="product-thumb"></a>
-                        <h2><a href="single-product.html">Apple new i phone 6</a></h2>
-                        <div class="product-wid-rating">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
-                        <div class="product-wid-price">
-                            <ins>$400.00</ins> <del>$425.00</del>
-                        </div>
-                    </div>
-                    <div class="single-wid-product">
-                        <a href="single-product.html"><img src="~/Asset/img/product-thumb-4.jpg" alt="" class="product-thumb"></a>
-                        <h2><a href="single-product.html">Samsung gallaxy note 4</a></h2>
-                        <div class="product-wid-rating">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
-                        <div class="product-wid-price">
-                            <ins>$400.00</ins> <del>$425.00</del>
-                        </div>
-                    </div>
-                    <div class="single-wid-product">
-                        <a href="single-product.html"><img src="~/Asset/img/product-thumb-1.jpg" alt="" class="product-thumb"></a>
-                        <h2><a href="single-product.html">Sony playstation microsoft</a></h2>
-                        <div class="product-wid-rating">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
-                        <div class="product-wid-price">
-                            <ins>$400.00</ins> <del>$425.00</del>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            </div>*@
+           @Html.Partial("_TopHot", ShopOn.Models.BUS.ShopOnlineBUS.TopHot())
         </div>
     </div>
 </div> <!-- End product widget area -->

@@ -5,19 +5,6 @@
     Layout = "~/Views/Shared/_MainLayout.cshtml";
 }
 
-<div class="product-big-title-area">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="product-bit-title text-center">
-                    <h2>Danh sách Sản phẩm</h2>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
 <div class="single-product-area">
     <div class="zigzag-bottom"></div>
     <div class="container">
@@ -29,7 +16,7 @@
                         <div class="product-upper">
                             <img src="~/Asset/img/@item.HinhChinh" alt="">
                         </div>
-                        <h2><a href="@Url.Action("Details", new { id = item.MaSanPham })">@item.TenSanPham</a></h2>
+                        <h2><a href="@Url.Action("Details", "Shop", new { id = item.MaSanPham })">@item.TenSanPham</a></h2>
                         <div class="product-carousel-price">
                             <ins>@item.Gia VNĐ</ins> @*<del>$999.00</del>*@
                         </div>
@@ -46,20 +33,7 @@
                 <div class="product-pagination text-center">
                     <nav>
                         <ul class="pagination">
-                            @Html.PagedListPager(Model, page => Url.Action("Index", new { page}))
-                            @*<li>
-                                <a href="#" aria-label="Previous">
-                                    <span aria-hidden="true">&laquo;</span>
-                                </a>
-                            </li>
-                            <li><a href="#">1</a></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li>
-                                <a href="#" aria-label="Next">
-                                    <span aria-hidden="true">&raquo;</span>
-                                </a>
-                            </li>*@
+                            @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
                         </ul>
                     </nav>
                 </div>
@@ -67,4 +41,7 @@
         </div>
     </div>
 </div>
+
+
+
 

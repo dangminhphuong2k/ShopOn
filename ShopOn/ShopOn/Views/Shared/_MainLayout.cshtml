@@ -41,64 +41,11 @@
 </head>
 <body>
 
-    <div class="header-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8">
-                    <div class="user-menu">
-                        <ul>
-                            <li><a href="#"><i class="fa fa-user"></i> Tài khoản</a></li>
-                            <li><a href="#"><i class="fa fa-heart"></i> Danh sách</a></li>
-                            <li><a href="~/Asset/cart.html"><i class="fa fa-user"></i> Giỏ hàng</a></li>
-                            <li><a href="~/Asset/checkout.html"><i class="fa fa-user"></i> Thanh toán</a></li>
-                            <li><a href="#"><i class="fa fa-user"></i> Login</a></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="header-right">
-                        <ul class="list-unstyled list-inline">
-                            <li class="dropdown dropdown-small">
-                                <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" href="#"><span class="key">Tiền tệ :</span><span class="value"> VNĐ </span><b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">VNĐ</a></li>
-                                    <li><a href="#">USD</a></li>
-                                </ul>
-                            </li>
-
-                            <li class="dropdown dropdown-small">
-                                <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" href="#"><span class="key">Ngôn ngữ :</span><span class="value"> Tiếng Việt </span><b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">Tiếng Việt</a></li>
-                                    <li><a href="#">English</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> <!-- End header area -->
-
-    <div class="site-branding-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-6">
-                    <div class="logo">
-                        <h1><a href="./"><img src="~/Asset/img/Côc.png"></a></h1>
-                    </div>
-                </div>
-
-                <div class="col-sm-6">
-                    <div class="shopping-item">
-                        <a href="~/Asset/cart.html">Giỏ hàng <span class="cart-amunt">-10%</span> <i class="fa fa-shopping-cart"></i> <span class="product-count">99+</span></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> <!-- End site branding area -->
-
+    @{
+        var headerPartital = Html.Partial("_Header");
+        headerPartital = new MvcHtmlString(headerPartital.ToString());
+    }
+    @headerPartital
     <div class="mainmenu-area">
         <div class="container">
             <div class="row">
@@ -115,10 +62,12 @@
                         @*<li class="active"><a href="@Url.Action("Index")">Home</a></li>*@
                         <li>@Html.ActionLink("Home", "Index", "Home")</li>
                         <li>@Html.ActionLink("Products", "Index", "Shop")</li>
+                        @Html.Partial("_NhaSanXuat", ShopOn.Models.BUS.NhaSanXuatBUS.DanhSach())
+                        @Html.Partial("_LoaiSanPham", ShopOn.Models.BUS.LoaiSanPhamBUS.DanhSach())
                         <li><a href="cart.html">Giỏ hàng</a></li>
                         <li><a href="checkout.html">Thanh toán</a></li>
                         @*<li><a href="#">Category</a></li>
-                            <li><a href="#">Others</a></li>*@
+        <li><a href="#">Others</a></li>*@
                         <li><a href="#">Liên hệ</a></li>
                     </ul>
                 </div>
@@ -128,85 +77,7 @@
 
     @RenderBody()
 
-    <div class="footer-top-area">
-        <div class="zigzag-bottom"></div>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3 col-sm-6">
-                    <div class="footer-about-us">
-                        <h2>Cocoon<span>Store</span></h2>
-                        <p>Hệ Thống Bán Lẻ Điện Thoại Di Động Chính Hãng Uy Tín Toàn Quốc .Chúng tôi cung cấp điện thoại tốt nhất với giá rẻ nhất - bảo hành lâu dài nhất: Điện thoại, Airpod,...</p>
-                        <div class="footer-social">
-                            <a href="#" target="_blank"><i class="fa fa-facebook"></i></a>
-                            <a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
-                            <a href="#" target="_blank"><i class="fa fa-youtube"></i></a>
-                            <a href="#" target="_blank"><i class="fa fa-instagram"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-3 col-sm-6">
-                    <div class="footer-menu">
-                        <h2 class="footer-wid-title">Về người dùng</h2>
-                        <ul>
-                            <li><a href="#">Tài khoản</a></li>
-                            <li><a href="#">Lịch sử</a></li>
-                            <li><a href="#">Danh sách</a></li>
-                            <li><a href="#">Thông tin liên hệ</a></li>
-                            <li><a href="#">Đầu trang</a></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="col-md-3 col-sm-6">
-                    <div class="footer-menu">
-                        <h2 class="footer-wid-title">Loại Sản phẩm</h2>
-                        <ul>
-                            <li><a href="#">Mobile Phone</a></li>
-                            <li><a href="#">Airpod</a></li>
-                            @*<li><a href="#">LED TV</a></li>
-                                <li><a href="#">Computer</a></li>
-                                <li><a href="#">Gadets</a></li>*@
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="col-md-3 col-sm-6">
-                    <div class="footer-newsletter">
-                        <h2 class="footer-wid-title">Để lại liên hệ</h2>
-                        <p>Để lại Email đăng ký nhận thông tin của chúng tôi và các ưu đãi độc quyền mà bạn sẽ không tìm thấy ở bất kỳ nơi nào khác ngay trong Email của bạn!</p>
-                        <div class="newsletter-form">
-                            <form action="#">
-                                <input type="email" placeholder="Nhập vào Email của bạn">
-                                <input type="submit" value="Subscribe">
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> <!-- End footer top area -->
-
-    <div class="footer-bottom-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8">
-                    <div class="copyright">
-                        <p>&copy; 2021 uCommerce. Cocoon Store All Rights Reserved. @*<a href="http://www.freshdesignweb.com" target="_blank">freshDesignweb.com</a>*@</p>
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="footer-card-icon">
-                        <i class="fa fa-cc-discover"></i>
-                        <i class="fa fa-cc-mastercard"></i>
-                        <i class="fa fa-cc-paypal"></i>
-                        <i class="fa fa-cc-visa"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> <!-- End footer bottom area -->
+    @{ Html.RenderPartial("_Footer");}
     <!-- Latest jQuery form server -->
     <script src="https://code.jquery.com/jquery.min.js"></script>
 
